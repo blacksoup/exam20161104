@@ -3,18 +3,18 @@
  - We would really need a daemon application that collects the monitoring statistics of a server , like disk usage, CPU load, memory usage, etc.
  - The script needs to collect the data using standard linux commands.
  - The application needs to be configurable (config.json included):
- -- The api_key (see later) needs to be defined here
- -- The url to send the data to needs to be defined here
+    - The api_key (see later) needs to be defined here
+    - The url to send the data to needs to be defined here
  - We need the following data
- -- Used memory in a percentage format  (string) with 2 decimal points (e.g.: 22.45), without the % character.
- -- Used cpu load in a percentage format  (string) with 2 decimal points (e.g.: 22.45), without the % character.
- -- Used disk space percentage for the root partition (string) with 2 decimal points (e.g.: 22.45), without the % character.
+    - Used memory in a percentage format  (string) with 2 decimal points (e.g.: 22.45), without the % character.
+    - Used cpu load in a percentage format  (string) with 2 decimal points (e.g.: 22.45), without the % character.
+    - Used disk space percentage for the root partition (string) with 2 decimal points (e.g.: 22.45), without the % character.
  - If the monitoring data has been gathered and parsed by the batch application, it would have to structure it and encode it into a JSON format and send it to a monitoring api, which would then parse and store the data for later usage.
- -- The monitoring api doesn't have to be implemented in this task, only the api call part. You will need to mock the api caller obejct since we will not provide you a valid url. The api response is not important for you, you can ignore it.
- -- The JSON has to be sent via a standard POST api call with the following parameters (with these keys):
- --- api_key: The special token that identifies the server. The key is a standard string (pre generated md5 hash).
- --- data: The JSON encoded string, that contains the monitoring data.
- -- The api call has to be configurable (URL parameter from config).
+    - The monitoring api doesn't have to be implemented in this task, only the api call part. You will need to mock the api caller obejct since we will not provide you a valid url. The api response is not important for you, you can ignore it.
+    - The JSON has to be sent via a standard POST api call with the following parameters (with these keys):
+        - api_key: The special token that identifies the server. The key is a standard string (pre generated md5 hash).
+        - data: The JSON encoded string, that contains the monitoring data.
+    - The api call has to be configurable (URL parameter from config).
 
  
         
